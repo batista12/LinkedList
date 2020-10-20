@@ -42,12 +42,33 @@ public class LinkedList {
 		}
     }
 	
+	/**
+	 * @return
+	 */
 	public INode pop() {
 		INode tempNode = head.getNext();
 		this.head = head.getNext();  
 		return tempNode;
 	}
 	
+	/**
+	 * @return
+	 */
+	public INode popLast(){
+		INode tempNode=this.head;
+		while(!tempNode.getNext().equals(tail)) {
+			tempNode=tempNode.getNext();
+		}
+		this.tail=tempNode;
+		tempNode=tempNode.getNext();
+		this.tail.setNext(null);
+		return tempNode;
+		
+	}
+	
+	/**
+	 * @param newNode
+	 */
 	public void append(INode newNode) {
 		if (this.head == null) {
 			this.head = newNode;
@@ -61,6 +82,10 @@ public class LinkedList {
 		}
 
 	}
+	/**
+	 * @param myNode
+	 * @param newNode
+	 */
 	public void insert(INode myNode, INode newNode) {
 		INode tempNode = myNode.getNext();
 		myNode.setNext(newNode);
