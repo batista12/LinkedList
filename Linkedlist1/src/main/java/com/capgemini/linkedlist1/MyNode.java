@@ -5,7 +5,7 @@ package com.capgemini.linkedlist1;
  *
  * @param <K>
  */
-public class MyNode<K> {
+public class MyNode<K> implements INode<K> {
 	private K key;
 	private MyNode next;
 
@@ -27,8 +27,10 @@ public class MyNode<K> {
 		return next;
 	}
 
-	public void setNext(MyNode next) {
-		this.next = next;
+	@Override
+	public void setNext(INode next) {
+		this.next = (MyNode<K>) next;
+		
 	}
 
 }
