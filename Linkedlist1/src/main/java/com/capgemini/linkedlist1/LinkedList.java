@@ -42,6 +42,12 @@ public class LinkedList {
 		}
     }
 	
+	public INode pop() {
+		INode tempNode = head.getNext();
+		this.head = head.getNext();  
+		return tempNode;
+	}
+	
 	public void append(INode newNode) {
 		if (this.head == null) {
 			this.head = newNode;

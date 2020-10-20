@@ -53,5 +53,21 @@ public class MyLinkedListTest {
 				&& myLinkedList.tail.equals(myThirdNode);
 		assertEquals(true, result);
 	}
+	
+	@Test
+	public void deletingNumber() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+	    LinkedList myLinkedList = new LinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.insert(myFirstNode, mySecondNode);
+		myLinkedList.printMyNodes();
+		MyNode<Integer> poppedelement = (MyNode<Integer>) myLinkedList.pop();
+		assertEquals(mySecondNode, poppedelement);
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myThirdNode);
+		assertEquals(true, result);
+	}
 
 }
