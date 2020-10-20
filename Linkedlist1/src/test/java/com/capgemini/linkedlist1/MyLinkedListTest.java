@@ -95,4 +95,20 @@ public class MyLinkedListTest {
 		assertEquals(myThirdNode, popLast);
 		myLinkedList.printMyNodes();
 	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void searchingNumber() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+	    LinkedList myLinkedList = new LinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		MyNode<Integer> search = (MyNode<Integer>) myLinkedList.search(30);
+		assertEquals(mySecondNode, search);
+	}
 }
