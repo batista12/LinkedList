@@ -124,8 +124,11 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		assertEquals(mySecondNode, insert);
 	}
+	/**
+	 * 
+	 */
 	@Test
-	public void RemovingNode() {
+	public void removingNode() {
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
 		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
 		MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
@@ -138,5 +141,27 @@ public class MyLinkedListTest {
 		MyNode<Integer> removeNode = (MyNode<Integer>) myLinkedList.removeNode(40);
 		myLinkedList.printMyNodes();
 		assertEquals(mySecondNode, removeNode);
+	}
+	/**
+	 * 
+	 */
+	@Test
+	public void sortingNode() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(30);
+	    LinkedList myLinkedList = new LinkedList();
+	    myLinkedList.append(myFirstNode);
+	    myLinkedList.append(myThirdNode);
+	    myLinkedList.insert(myFirstNode,mySecondNode);
+	    myLinkedList.printMyNodes();
+	    myLinkedList.newSorted(myFirstNode);
+	    myLinkedList.printMyNodes();
+	    boolean result = myLinkedList.head.equals(myFourthNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.head.getNext().getNext().equals(myFirstNode)
+				&& myLinkedList.head.getNext().getNext().getNext().equals(myThirdNode);
+		assertEquals(true, result);
+	
 	}
 }
