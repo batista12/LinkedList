@@ -2,9 +2,10 @@ package com.capgemini.linkedlist1;
 
 /**
  * @author ASUS
+ * @param <K>
  *
  */
-public class LinkedList {
+public class LinkedList<K> {
 	public INode head;
 	public INode tail;
 
@@ -90,5 +91,20 @@ public class LinkedList {
 		INode tempNode = myNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
+	}
+	/**
+	 * @param key
+	 * @return
+	 */
+	public INode search(K key) {
+		INode tempNode = head;
+		while(tempNode!=null&&tempNode.getNext()!=null) {
+			if(tempNode.getKey().equals(key)) {
+				return tempNode;
+			}
+			else 
+				tempNode = tempNode.getNext();	
+		}
+		return null;
 	}
 }
