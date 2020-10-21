@@ -8,7 +8,7 @@ package com.capgemini.linkedlist1;
 public class LinkedList<K> {
 	public INode head;
 	public INode tail;
-
+    public int size=0;
 	public LinkedList() {
 		this.head = null;
 		this.tail = null;
@@ -137,4 +137,26 @@ public class LinkedList<K> {
 		return tempNode;
 	}
 
+	public int size() {
+		return size;
+	}
+
+	public void newSorted(INode newNode) {
+		INode tempNode;
+
+		if (head == null || ((Comparable) head.getKey()).compareTo(newNode.getKey()) >= 0) {
+			newNode.setNext(head);
+			head = newNode;
+		} else {
+			tempNode = head;
+			while (tempNode.getNext() != null && ((Comparable) tempNode.getNext().getKey()).compareTo(newNode.getKey()) < 0) {
+				tempNode = tempNode.getNext();
+				newNode.setNext(tempNode.getNext());
+				tempNode.setNext(newNode);
+			}
+		
+			size++;
+		}
+
+	}
 }
