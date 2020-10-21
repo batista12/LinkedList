@@ -124,4 +124,17 @@ public class LinkedList<K> {
 		newNode.setNext(tempNode2);
 		return tempNode;
 }
+	public INode removeNode(K key) {
+		INode tempNode = head;
+		while(tempNode!=null&&tempNode.getNext()!=null) {
+			if(tempNode.getNext().getKey().equals(key)) {
+				break;
+			}
+			else 
+				tempNode = tempNode.getNext();	
+		}
+		tempNode.setNext(tempNode.getNext().getNext());
+		return tempNode;
+	}
+
 }
