@@ -124,4 +124,19 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		assertEquals(mySecondNode, insert);
 	}
+	@Test
+	public void RemovingNode() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(70);
+	    LinkedList myLinkedList = new LinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myFourthNode);
+		MyNode<Integer> removeNode = (MyNode<Integer>) myLinkedList.removeNode(40);
+		myLinkedList.printMyNodes();
+		assertEquals(mySecondNode, removeNode);
+	}
 }
