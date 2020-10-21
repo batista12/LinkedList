@@ -107,4 +107,21 @@ public class LinkedList<K> {
 		}
 		return null;
 	}
+	/**
+	 * @param value
+	 * @param newNode
+	 */
+	public INode insertAfter(K key, INode newNode) {
+		INode tempNode = head;
+		while (tempNode != null && tempNode.getNext() != null) {
+			if (tempNode.getKey().equals(key)) {
+				break;
+			} else
+				tempNode = tempNode.getNext();
+		}
+		INode tempNode2 = tempNode.getNext();
+		tempNode.setNext(newNode);
+		newNode.setNext(tempNode2);
+		return tempNode;
+}
 }

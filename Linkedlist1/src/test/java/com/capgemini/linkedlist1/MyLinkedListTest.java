@@ -111,4 +111,17 @@ public class MyLinkedListTest {
 		MyNode<Integer> search = (MyNode<Integer>) myLinkedList.search(30);
 		assertEquals(mySecondNode, search);
 	}
+	@Test
+	public void insertAtCorrectPosition() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		LinkedList myLinkedList = new LinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.insert(myFirstNode, mySecondNode);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(40);
+		MyNode<Integer> insert = (MyNode<Integer>) myLinkedList.insertAfter(30, myFourthNode);
+		myLinkedList.printMyNodes();
+		assertEquals(mySecondNode, insert);
+	}
 }
