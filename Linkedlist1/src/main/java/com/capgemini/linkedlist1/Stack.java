@@ -1,5 +1,9 @@
 package com.capgemini.linkedlist1;
 
+/**
+ * @author ASUS
+ *
+ */
 public class Stack {
 	private final LinkedList myLinkedList;
 
@@ -26,4 +30,4 @@ public class Stack {
 	public INode peak() {
 		return myLinkedList.head;
 	}
-}
+
