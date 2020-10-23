@@ -30,4 +30,4 @@ public class Stack {
 	public INode peak() {
 		return myLinkedList.head;
 	}
-}
+
