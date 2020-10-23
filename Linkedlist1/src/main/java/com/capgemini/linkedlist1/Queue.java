@@ -1,7 +1,6 @@
 package com.capgemini.linkedlist1;
-
 /**
- * @author ASUS
+ * 
  *
  */
 public class Queue {
@@ -18,7 +17,6 @@ public class Queue {
 	public void printQueue() {
 		myLinkedList.printMyNodes();
 	}
-	
 	public INode dequeue() {
 		return myLinkedList.pop();
 	}
